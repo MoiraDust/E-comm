@@ -16,6 +16,8 @@ class UserController extends Controller
         if (empty($user) || !(Hash::check($req->password, $user->password))) {
             return "Username or password is wrong";
         }else{
+            // 把user放在session里面
+            $req->session()->put('user',$user);
             return redirect("/");
         }
     }
