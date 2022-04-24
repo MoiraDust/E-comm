@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use Session;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Trending;
@@ -57,8 +58,12 @@ class ProductController extends Controller
         $data = Product::where('productName', 'like', '%' . $req->input('query') . '%')->get();
         return view('search', ['products' => $data]);
     }
+
 //    count items in cart
-function cartItem(){
-        
-}
+    static function cartItem()
+    {
+//        因为需要userID所以需要导入session
+        $userId = Session::get('user')['id'];
+        return Cart::where("user_id", $userId)->count();
+    }
 }
