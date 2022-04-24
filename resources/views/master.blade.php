@@ -28,6 +28,9 @@
     img {
         object-fit: cover;
     }
+    h4{
+        font-weight:normal;
+    }
     .nav-container{
         height: 7vh;
         background-color: #1a202c;
@@ -61,6 +64,32 @@
     .trending-img-container{
         display: flex;
         justify-content:space-around;
+    }
+/*    detail page*/
+    .detail-img{
+        height: 400px;
+    }
+    .detail-container{
+        height: 85vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
+    .detail-container a{
+        /*background-color: #1a202c;*/
+        height: 50px;
+        padding:10px;
+        font-size:20px;
+    }
+    .detail-item{
+        margin: auto;
+        /*background-color: #4f70af;*/
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .detail-item .detail-text-box{
+        padding:100px;
     }
 </style>
 </html>

@@ -22,3 +22,7 @@ Route::post('/login', [UserController::class,'login']);
 
 //index product list
 Route::get('/',[ProductController::class,'index']);
+
+//detail pages
+Route::get('details/{id}',[ProductController::class,'detail']);
+Route::get('trending/{id}',[ProductController::class,'trending_detail']);
