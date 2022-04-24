@@ -35,7 +35,7 @@
             <h3 class="trending-title">Trending Products</h3>
             <div class="trending-img-container">
                 @foreach($trendings as $item)
-                    <a href="trending/{{$item['id']}}">
+                    <a href="details/{{$item['id']}}">
                         <div class="item-card">
                             <img class="trending-img" src="{{$item['gallery']}}" alt="no pic">
                             <h4>{{$item['productName']}}</h4>

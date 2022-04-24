@@ -16,7 +16,7 @@
                         <a class="nav-link" href="#">Orders</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cart</a>
+                        <a class="nav-link" href="#">Cart(0)</a>
                     </li>
                 </ul>
                 <form class="d-flex">

@@ -26,3 +26,6 @@ Route::get('/',[ProductController::class,'index']);
 //detail pages
 Route::get('details/{id}',[ProductController::class,'detail']);
 Route::get('trending/{id}',[ProductController::class,'trending_detail']);
+
+//cart
+Route::post('add_to_cart',[ProductController::class,'addToCart']);
