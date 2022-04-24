@@ -29,3 +29,6 @@ Route::get('trending/{id}',[ProductController::class,'trending_detail']);
 
 //cart
 Route::post('add_to_cart',[ProductController::class,'addToCart']);
+
+//search
+Route::post('search',[ProductController::class,'search']);

@@ -28,13 +28,19 @@
     img {
         object-fit: cover;
     }
-    h4{
-        font-weight:normal;
+
+    h4 {
+        font-weight: normal;
     }
-    .nav-container{
+
+    body {
+        overflow: hidden;
+    }
+    .nav-container {
         height: 7vh;
         background-color: #1a202c;
     }
+
     .custom-login {
         padding: 100px;
         height: 500px;
@@ -58,38 +64,69 @@
     .trending-img {
         height: 200px;
     }
-    .trending-title{
+
+    .trending-title {
         text-align: center;
     }
-    .trending-img-container{
+
+    .trending-img-container {
         display: flex;
-        justify-content:space-around;
+        justify-content: space-around;
     }
-/*    detail page*/
-    .detail-img{
+
+    /*    detail page*/
+    .detail-img {
         height: 400px;
     }
-    .detail-container{
+
+    .detail-container {
         height: 85vh;
         width: 100vw;
         display: flex;
         flex-direction: column;
     }
-    .detail-container a{
+
+    .detail-container a {
         /*background-color: #1a202c;*/
         height: 50px;
-        padding:10px;
-        font-size:20px;
+        padding: 10px;
+        font-size: 20px;
     }
-    .detail-item{
+
+    .detail-item {
         margin: auto;
         /*background-color: #4f70af;*/
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
-    .detail-item .detail-text-box{
-        padding:100px;
+
+    .detail-item .detail-text-box {
+        padding: 100px;
+    }
+
+    /*    search page*/
+    .search_container {
+        height: 85vh;
+        /*background-color: #1a202c;*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow:auto;
+    }
+
+    .search_container img {
+        height: 150px;
+    }
+
+    .result_card {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        /*background-color: #6b7280;*/
+        display: flex;
+    }
+    .result_text{
+        padding: 20px;
     }
 </style>
 </html>

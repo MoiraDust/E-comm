@@ -40,9 +40,9 @@ class ProductController extends Controller
             /*1 . new object*/
             $cart = new Cart();
             /*2. get data from session*/
-            $cart->user_id=$req->session()->get('user')['id'];
+            $cart->user_id = $req->session()->get('user')['id'];
             /*3. get data from form*/
-            $cart->product_id=$req->product_id;
+            $cart->product_id = $req->product_id;
             /*4. save*/
             $cart->save();
             return redirect("/");
@@ -50,4 +50,15 @@ class ProductController extends Controller
             return redirect("/login");
         }
     }
+
+//    product search
+    function search(Request $req)
+    {
+        $data = Product::where('productName', 'like', '%' . $req->input('query') . '%')->get();
+        return view('search', ['products' => $data]);
+    }
+//    count items in cart
+function cartItem(){
+        
+}
 }

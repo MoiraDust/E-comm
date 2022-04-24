@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
     <div class="detail-container">
-        <a href="/">Go Back</a>
+        <a href="javascript:history.back();">Go Back</a>
         <div class="detail-item">
             <div class="row">
                 <div class="col-sm-6 detail-img-box">
