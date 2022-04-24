@@ -142,14 +142,22 @@
         align-items: center;
         overflow: auto;
     }
-    .cart-container img{
+
+    .cart-container img {
         height: 150px;
     }
-    .cart-container h3,h4,h5{
+
+    .cart-container h3, h4, h5 {
         font-weight: normal;
     }
-    .cart-container .cart-title{
+
+    .cart-container .cart-title {
         padding: 5px;
+    }
+
+    /*    place order*/
+    .order-table {
+        padding-top:50px;
     }
 </style>
 </html>

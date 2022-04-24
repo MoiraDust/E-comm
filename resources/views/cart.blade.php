@@ -20,5 +20,8 @@
                 </div>
             </div>
         @endforeach
+            <a href="/placeOrder">
+                <button class="btn btn-outline-info">Place Order</button>
+            </a>
     </div>
 @endsection

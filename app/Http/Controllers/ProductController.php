@@ -86,4 +86,14 @@ class ProductController extends Controller
         Cart::destroy($id);
         return redirect("/cart");
     }
+    //place order
+    function placeOrder(){
+        $userId = Session::get('user')['id'];
+        $total = DB::table("carts")
+            ->join('products', 'carts.product_id', '=', 'products.id')
+            ->where('carts.user_id', $userId)
+            ->select('products.*', 'carts.id as cart_id')
+            ->sum('products.price');
+        return view('placeorder',['total'=>$total]);
+    }
 }
