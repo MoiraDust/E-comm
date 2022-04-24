@@ -38,3 +38,6 @@ Route::get('/logout', function () {
     Session::forget('user');
     return view('login');
 });
+
+//cart list
+Route::get('cart',[ProductController::class,'cartList']);
