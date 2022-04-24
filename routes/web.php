@@ -32,3 +32,9 @@ Route::post('add_to_cart',[ProductController::class,'addToCart']);
 
 //search
 Route::post('search',[ProductController::class,'search']);
+
+//logout
+Route::get('/logout', function () {
+    Session::forget('user');
+    return view('login');
+});

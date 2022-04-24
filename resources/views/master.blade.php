@@ -40,10 +40,10 @@
         height: 7vh;
         background-color: #1a202c;
     }
-
+    /*login*/
     .custom-login {
-        padding: 100px;
-        height: 500px;
+        height: 85vh;
+        padding: 150px;
     }
 
     .slider-img {
@@ -58,6 +58,7 @@
     }
 
     .custom-product {
+        padding-top: 20px;
         height: 85vh;
     }
 

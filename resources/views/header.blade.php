@@ -1,6 +1,10 @@
 <?php
 use App\Http\Controllers\ProductController;
-$total = ProductController::cartItem();
+$total = 0;
+//login check
+if (Session::has('user')) {
+    $total = ProductController::cartItem();
+}
 ?>
 <div class="nav-container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -22,10 +26,26 @@ $total = ProductController::cartItem();
                     <li class="nav-item">
                         <a class="nav-link" href="#">Cart(<?=$total?>)</a>
                     </li>
+                    @if(Session::has('user'))
+                        {{--dropdown--}}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                {{Session::get('user')['name']}}
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/logout">Log out</a>
+                            </div>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                    @endif
                 </ul>
                 <form class="d-flex" action="/search" method="POST">
                     @csrf
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                           name="query">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>

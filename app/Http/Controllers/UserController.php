@@ -12,12 +12,12 @@ class UserController extends Controller
     function login(Request $req)
     {
         $user = User::where(['email' => $req->email])->first();
-    //如果不存在user或者密码错了
+        //如果不存在user或者密码错了
         if (empty($user) || !(Hash::check($req->password, $user->password))) {
             return "Username or password is wrong";
-        }else{
+        } else {
             // 把user放在session里面
-            $req->session()->put('user',$user);
+            $req->session()->put('user', $user);
             return redirect("/");
         }
     }
