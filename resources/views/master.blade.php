@@ -25,6 +25,13 @@
 {{View::make('footer')}}
 </body>
 <style>
+    img {
+        object-fit: cover;
+    }
+    .nav-container{
+        height: 7vh;
+        background-color: #1a202c;
+    }
     .custom-login {
         padding: 100px;
         height: 500px;
@@ -33,15 +40,27 @@
     .slider-img {
         height: 40vh !important;
         width: 90vw !important;
-        object-fit: cover;
         margin-top: 5px;
         margin-bottom: 5px;
     }
-    .slider-text{
+
+    .slider-text {
         background: rgba(76, 175, 80, 0.3)
     }
-    .custom-product{
-        height: 100vh;
+
+    .custom-product {
+        height: 85vh;
+    }
+
+    .trending-img {
+        height: 200px;
+    }
+    .trending-title{
+        text-align: center;
+    }
+    .trending-img-container{
+        display: flex;
+        justify-content:space-around;
     }
 </style>
 </html>

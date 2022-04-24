@@ -3,11 +3,6 @@
     <div class="container custom-product">
         {{--        slider--}}
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
             <div class="carousel-inner">
                 {{--                <div class="carousel-item active">--}}
                 {{--                    <img class="d-block w-100" src="https://s1.ax1x.com/2022/04/23/LfTGVJ.jpg" alt="First slide">--}}
@@ -31,13 +26,17 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+{{--        {{View::make('trending')}}--}}
         {{--        trending list--}}
-        <div class="trending">
-            <h3>Trending Products</h3>
-            <div>
-                <img src="" alt=""><div>
-                    <h3></h3>
-                </div>
+        <div class="trending-container">
+            <h3 class="trending-title">Trending Products</h3>
+            <div class="trending-img-container">
+                @foreach($trendings as $item)
+                    <div class="item-card">
+                        <img class="trending-img" src="{{$item['gallery']}}" alt="no pic">
+                        <h4>{{$item['productName']}}</h4>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
