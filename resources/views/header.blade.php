@@ -20,13 +20,13 @@ if (Session::has('user')) {
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Orders</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/cart">Cart(<?=$total?>)</a>
-                    </li>
                     @if(Session::has('user'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Orders</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cart">Cart(<?=$total?>)</a>
+                        </li>
                         {{--dropdown--}}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
