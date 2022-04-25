@@ -113,7 +113,7 @@ class ProductController extends Controller
             $orderInfo = new Order();
             $orderInfo->product_id = $cartInfo->product_id;
             $orderInfo->user_id = $userId;
-            $orderInfo->status="pending";
+            $orderInfo->status = "pending";
             $orderInfo->payment_method = $req->payment;
             $orderInfo->address = $req->address;
             $orderInfo->save();
@@ -121,5 +121,17 @@ class ProductController extends Controller
         /*5. delete the cart*/
         Cart::where('user_id', $userId)->delete();
         return redirect('/');
+    }
+
+    //history order
+    function orderHistory()
+    {
+        $userId = Session::get('user')['id'];
+        $order = DB::table("orders")
+            ->join('products', 'orders.product_id', '=', 'products.id')
+            ->where('orders.user_id', $userId)
+            ->select('*')
+            ->get();
+        return view('/myorders', ['products' => $order]);
     }
 }

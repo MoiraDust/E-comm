@@ -49,3 +49,6 @@ Route::get('checkorder',[ProductController::class,'checkOrder']);
 
 //place order
 Route::post('order',[ProductController::class,'placeOrder']);
+
+//order history
+Route::get('orderhistory',[ProductController::class,'orderHistory']);

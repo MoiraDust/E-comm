@@ -27,19 +27,24 @@
                 </table>
             </div>
             <div>
-                <form action="/order" method="POST">
+                <form action="/order" method="POST" id="order">
                     @csrf
                     <div class="form-group">
-                        <label for="email"></label><textarea class="form-control" placeholder="Enter your address" name="address"></textarea>
+                        {{--                        <label>--}}
+                        {{--                            <input type="text" class="form-control" placeholder="Enter your address" name="address" data-bv-notempty data-bv-notempty-message="please enter your address"></input>--}}
+                        {{--                        </label>--}}
+                        <label for="address">Address:</label>
+                        <input type="text" class="form-control" id="address" placeholder="Enter your address"
+                               name="address" required>
                     </div>
                     <div class="form-group">
                         <label>Payment Method
                             <br>
-                            <input type="radio" name="payment" value="paypal"><span>Paypal</span>
+                            <input type="radio" name="payment" value="paypal" checked><span>Paypal</span>
                             <input type="radio" name="payment" value="mastercard"><span>Master Card</span>
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Place your order</button>
                 </form>
             </div>
         </div>
