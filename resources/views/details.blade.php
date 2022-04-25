@@ -21,7 +21,6 @@
                         <button class="btn btn-primary">Add to Cart</button>
                     </form>
                     <br>
-                    <button class="btn btn-success">Buy now</button>
                 </div>
             </div>
         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Order;
 use Illuminate\Support\Facades\DB;
 use Session;
 use Illuminate\Http\Request;
@@ -86,14 +87,39 @@ class ProductController extends Controller
         Cart::destroy($id);
         return redirect("/cart");
     }
-    //place order
-    function placeOrder(){
+
+    //check order
+    function checkOrder()
+    {
         $userId = Session::get('user')['id'];
         $total = DB::table("carts")
             ->join('products', 'carts.product_id', '=', 'products.id')
             ->where('carts.user_id', $userId)
             ->select('products.*', 'carts.id as cart_id')
             ->sum('products.price');
-        return view('placeorder',['total'=>$total]);
+        return view('checkorder', ['total' => $total]);
+    }
+
+    //place order
+    function placeOrder(Request $req)
+    {
+        /*1. $req是表单的信息*/
+        /*2. 获取Cart的信息*/
+        $userId = Session::get('user')['id'];
+        $cartsInfo = Cart::where('user_id', $userId)->get();
+        /*3. 赋值.carts [] */
+        foreach ($cartsInfo as $cartInfo) {
+            /*4. new object*/
+            $orderInfo = new Order();
+            $orderInfo->product_id = $cartInfo->product_id;
+            $orderInfo->user_id = $userId;
+            $orderInfo->status="pending";
+            $orderInfo->payment_method = $req->payment;
+            $orderInfo->address = $req->address;
+            $orderInfo->save();
+        }
+        /*5. delete the cart*/
+        Cart::where('user_id', $userId)->delete();
+        return redirect('/');
     }
 }

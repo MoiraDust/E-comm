@@ -20,7 +20,7 @@
                 </div>
             </div>
         @endforeach
-            <a href="/placeOrder">
+            <a href="/checkorder">
                 <button class="btn btn-outline-info">Place Order</button>
             </a>
     </div>

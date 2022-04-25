@@ -27,9 +27,10 @@
                 </table>
             </div>
             <div>
-                <form action="/action_page.php">
+                <form action="/order" method="POST">
+                    @csrf
                     <div class="form-group">
-                        <label for="email"></label><textarea class="form-control" placeholder="Enter your address" id="email"></textarea>
+                        <label for="email"></label><textarea class="form-control" placeholder="Enter your address" name="address"></textarea>
                     </div>
                     <div class="form-group">
                         <label>Payment Method

@@ -32,7 +32,7 @@
         {{--        {{View::make('trending')}}--}}
         {{--        trending list--}}
         <div class="trending-container">
-            <h3 class="trending-title">Trending Products</h3>
+            <h3 class="trending-title">Product List</h3>
             <div class="trending-img-container">
                 @foreach($trendings as $item)
                     <a href="details/{{$item['id']}}">
