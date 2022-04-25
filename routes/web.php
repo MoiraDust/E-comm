@@ -18,20 +18,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', function () {
     return view('login');
 });
-Route::post('/login', [UserController::class,'login']);
+Route::post('/login', [UserController::class, 'login']);
 
 //index product list
-Route::get('/',[ProductController::class,'index']);
+Route::get('/', [ProductController::class, 'index']);
 
 //detail pages
-Route::get('details/{id}',[ProductController::class,'detail']);
-Route::get('trending/{id}',[ProductController::class,'trending_detail']);
+Route::get('details/{id}', [ProductController::class, 'detail']);
+Route::get('trending/{id}', [ProductController::class, 'trending_detail']);
 
 //cart
-Route::post('add_to_cart',[ProductController::class,'addToCart']);
+Route::post('add_to_cart', [ProductController::class, 'addToCart']);
 
 //search
-Route::post('search',[ProductController::class,'search']);
+Route::post('search', [ProductController::class, 'search']);
 
 //logout
 Route::get('/logout', function () {
@@ -40,15 +40,19 @@ Route::get('/logout', function () {
 });
 
 //cart list
-Route::get('cart',[ProductController::class,'cartList']);
+Route::get('cart', [ProductController::class, 'cartList']);
 //remove item
-Route::get('removeItem/{cart_id}',[ProductController::class,'removeItem']);
+Route::get('removeItem/{cart_id}', [ProductController::class, 'removeItem']);
 
 //check order
-Route::get('checkorder',[ProductController::class,'checkOrder']);
+Route::get('checkorder', [ProductController::class, 'checkOrder']);
 
 //place order
-Route::post('order',[ProductController::class,'placeOrder']);
+Route::post('order', [ProductController::class, 'placeOrder']);
 
 //order history
-Route::get('orderhistory',[ProductController::class,'orderHistory']);
+Route::get('orderhistory', [ProductController::class, 'orderHistory']);
+
+//register page
+Route::view('/register','register');
+Route::post('/register',[UserController::class,'register']);
